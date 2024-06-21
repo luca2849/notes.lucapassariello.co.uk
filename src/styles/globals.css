@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
+}
+
+body {
+	color: rgb(var(--foreground-rgb));
+	background: linear-gradient(
+			to bottom,
+			transparent,
+			rgb(var(--background-end-rgb))
+		)
+		rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
+}
+
+@layer base {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: bold;
+		margin: 0.5rem 0;
+	}
+
+	.mdx h1 {
+		font-size: 3rem;
+		color: theme("colors.primary.500");
+	}
+
+	.mdx h2 {
+		font-size: 2.25rem;
+		color: theme("colors.primary.300");
+	}
+
+	.mdx h3 {
+		font-size: 2rem;
+		color: theme("colors.primary.200");
+	}
+
+	.mdx h4 {
+		font-size: 1.75rem;
+		color: theme("colors.primary.100");
+	}
+
+	.mdx h5 {
+		font-size: 1.5rem;
+		color: theme("colors.primary.50");
+	}
+
+	/* used as a title for code-blocks */
+	.mdx h6 {
+		padding: 1rem;
+		margin-bottom: 0;
+		border-top-right-radius: 10px;
+		border-top-left-radius: 10px;
+		background-color: rgb(47, 47, 47);
+	}
+
+	.mdx p {
+		text-align: justify;
+		-webkit-text-size-adjust: 100%;
+		tab-size: 4;
+		font-feature-settings: normal;
+		font-variation-settings: normal;
+		color-scheme: dark;
+		font-family: Optimistic Text, -apple-system, ui-sans-serif, system-ui,
+			sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+			Noto Color Emoji;
+		font-size: 17px;
+		line-height: 30px;
+		-webkit-font-smoothing: antialiased;
+		overflow-wrap: break-word;
+		font-weight: 400;
+		color: rgb(246 247 249 / var(--tw-text-opacity));
+		box-sizing: border-box;
+		border: 0 solid #e5e7eb;
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
+		white-space: pre-wrap;
+		font-size: 1.15rem;
+	}
+
+	.mdx code {
+		background: #333;
+		padding: 0.125rem 0.25rem;
+		margin: 0 0.25rem;
+		border-radius: 2px;
+	}
+
+	.mdx .toc-item {
+		margin: 0.5rem auto;
+	}
+
+	.mdx .toc-item-h2 {
+		padding-left: 0.5rem;
+	}
+
+	.mdx .toc-item-h3 {
+		padding-left: 1rem;
+	}
+
+	.mdx .toc-item-h4 {
+		padding-left: 1.25rem;
+	}
+}
